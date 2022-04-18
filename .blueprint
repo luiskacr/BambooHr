@@ -1,0 +1,47 @@
+created:
+    - database/factories/JobOffersFactory.php
+    - database/factories/PersonFactory.php
+    - database/factories/PersonProfileFactory.php
+    - database/factories/KnowledgeFactory.php
+    - database/factories/ExperienceFactory.php
+    - database/factories/ContestsFactory.php
+    - database/factories/DeparmentFactory.php
+    - database/factories/EmployeeFactory.php
+    - database/factories/EmployeeHistoryFactory.php
+    - database/migrations/2022_04_15_084916_create_job_offers_table.php
+    - database/migrations/2022_04_15_084917_create_people_table.php
+    - database/migrations/2022_04_15_084918_create_person_profiles_table.php
+    - database/migrations/2022_04_15_084919_create_knowledge_table.php
+    - database/migrations/2022_04_15_084920_create_experiences_table.php
+    - database/migrations/2022_04_15_084921_create_contests_table.php
+    - database/migrations/2022_04_15_084922_create_deparments_table.php
+    - database/migrations/2022_04_15_084923_create_employees_table.php
+    - database/migrations/2022_04_15_084924_create_employee_histories_table.php
+    - app/Models/JobOffers.php
+    - app/Models/Person.php
+    - app/Models/PersonProfile.php
+    - app/Models/Knowledge.php
+    - app/Models/Experience.php
+    - app/Models/Contests.php
+    - app/Models/Deparment.php
+    - app/Models/Employee.php
+    - app/Models/EmployeeHistory.php
+    - database/seeders/JobOffersSeeder.php
+    - database/seeders/PersonSeeder.php
+    - database/seeders/PersonProfileSeeder.php
+    - database/seeders/KnowledgeSeeder.php
+    - database/seeders/ExperienceSeeder.php
+    - database/seeders/ContestsSeeder.php
+    - database/seeders/DeparmentSeeder.php
+    - database/seeders/EmployeeSeeder.php
+    - database/seeders/EmployeeHistorySeeder.php
+models:
+    JobOffers: { title: string, jobDescriptions: longtext, jobRequirements: longtext, startDate: date, finishDate: 'date nullable' }
+    Person: { cardId: 'string unique', name: string, lastname: string, contact: string, email: string, birthDate: date, gender: string, address: string }
+    PersonProfile: { person_id: 'id foreign', description: longtext, lenguages: string, relationships: { belongsTo: Person } }
+    Knowledge: { personProfile_id: 'id foreign', title: string, where: 'string nullable', endDate: 'date nullable', typeTecnilogy: 'string nullable', relationships: { belongsTo: PersonProfile } }
+    Experience: { personProfile_id: 'id foreign', title: string, description: longtext, startDate: date, finishDate: 'date nullable', relationships: { belongsTo: PersonProfile } }
+    Contests: { jobOffers_id: 'id foreign', person_id: 'id foreign', relationships: { belongsTo: 'JobOffers, Person' } }
+    Deparment: { name: string }
+    Employee: { person_id: 'id foreign', hireDate: date, deparment_id: 'id foreign', activeState: 'boolean  default:1', workFor: string, fireDate: 'date nullable', relationships: { belongsTo: 'Persons, Deparment, PersonProfile' } }
+    EmployeeHistory: { employee_id: 'id foreign', efectiveDate: date, salary: 'decimal:8,2', deparment_id: 'id foreign', relationships: { belongsTo: 'Employee, Deparment' } }

@@ -1,0 +1,71 @@
+models:
+  JobOffers:
+    title: string
+    jobDescriptions: longtext
+    jobRequirements: longtext
+    startDate: date
+    finishDate: date nullable
+
+  Person:
+    cardId: string unique
+    name: string
+    lastname: string
+    contact: string
+    email: string
+    birthDate: date
+    gender: string
+    address: string
+
+  PersonProfile:
+    person_id: id foreign
+    description: longtext
+    lenguages: string
+    relationships:
+      belongsTo: Person
+
+  Knowledge:
+    personProfile_id: id foreign
+    title: string
+    where: string nullable
+    endDate: date nullable
+    typeTecnilogy: string nullable
+    relationships:
+      belongsTo: PersonProfile
+
+  Experience:
+    personProfile_id: id foreign
+    title: string
+    description: longtext
+    startDate: date
+    finishDate: date nullable
+    relationships:
+      belongsTo: PersonProfile
+
+  Contests:
+    jobOffers_id: id foreign
+    person_id: id foreign
+    relationships:
+      belongsTo: JobOffers, Person
+
+  Deparment:
+    name: string
+
+  Employee:
+    person_id: id foreign
+    hireDate: date
+    deparment_id: id foreign
+    activeState: boolean  default:1
+    workFor: string
+    fireDate: date nullable
+    relationships:
+      belongsTo: Persons, Deparment, PersonProfile
+
+  EmployeeHistory:
+    employee_id: id foreign
+    efectiveDate: date
+    salary: decimal:8,2
+    deparment_id: id foreign
+    relationships:
+      belongsTo: Employee, Deparment
+
+seeders: JobOffers, Person, PersonProfile, Knowledge, Experience, Contests, Deparment, Employee, EmployeeHistory

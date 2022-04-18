@@ -1,0 +1,49 @@
+@font-face {
+    font-family: Metropolis-Bold;
+    src: url('/fonts/Metropolis-Bold.tff');
+}
+
+header.app-header.bg-dark.navbar {
+    background-color: #34B5D9!important;
+}
+
+.sidebar.bg-dark {
+    background-color: #34B5D9!important;
+}
+
+.sidebar-nav i{
+    color: white!important;
+}
+
+a.nav-link.active{
+    background-color: #D60084!important;
+}
+
+a.nav-link:hover{
+    color:F1F2F2 ;
+    background-color: #2991ad!important;
+}
+
+.sidebar .nav-link.active .nav-icon {
+    color: white!important;
+}
+
+
+a.breadcrumb-item.text-capitalize {
+    color:#3296A0!important ;
+}
+
+.btn-primary, .btn-primary:active, .btn-primary:visited {
+    color: white!important;
+    background-color: #34B5D9 !important;
+}
+
+.btn-primary:hover{
+    color: white!important;
+    background-color: #2b94b1 !important;
+}
+
+.page-item.active .page-link{
+    color: white!important;
+    background-color: #34B5D9 !important;
+}
