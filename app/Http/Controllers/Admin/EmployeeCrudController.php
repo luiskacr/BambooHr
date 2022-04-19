@@ -59,6 +59,12 @@ class EmployeeCrudController extends CrudController
             'model' => 'App\Models\Deparment'
         ]);
         CRUD::column('workFor')->label('Empresa');
+        $this->crud->addColumn([
+            'name' => 'vacaciones',
+            'label'=> 'Vacaciones',
+            'type' => 'number',
+
+        ]);
         CRUD::column('hireDate')->label('Fecha Contratacion');
         CRUD::column('activeState')->label('Estado');
 

@@ -33,15 +33,37 @@ a.breadcrumb-item.text-capitalize {
     color:#3296A0!important ;
 }
 
+.noty_body{
+    color: #f7fcfb;
+    background-color: #42ba96;
+    border-color: #3ead8e;
+}
+
+.dropdown-item.active{
+    background-color: #D60084!important;
+}
+
+.dropdown-item:hover{
+    background-color: #34B5D9 !important;
+}
+
+.btn-success{
+    color: white!important;
+    background-color: #34B5D9 !important;
+    border-color: #969799 !important;
+}
 .btn-primary, .btn-primary:active, .btn-primary:visited {
     color: white!important;
     background-color: #34B5D9 !important;
+    border-color: #969799 !important;
 }
 
 .btn-primary:hover{
     color: white!important;
     background-color: #2b94b1 !important;
+    border-color: #969799 !important;
 }
+
 
 .page-item.active .page-link{
     color: white!important;

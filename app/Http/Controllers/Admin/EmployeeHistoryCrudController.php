@@ -39,7 +39,15 @@ class EmployeeHistoryCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('employee_id');
+        //CRUD::column('employee_id');
+        $this->crud->addField([
+            'label'=>'Empleado',
+            'type'=> 'select',
+            'name'=> 'employee_id',
+            'entity'=> 'employee',
+            'attribute'=> 'person_id',
+            'model' => 'App\Models\Employee'
+        ]);
         CRUD::column('efectiveDate');
         CRUD::column('salary');
         CRUD::column('deparment_id');
